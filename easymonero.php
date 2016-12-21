@@ -42,14 +42,6 @@ class Monero {
 
   private $host;
   private $port;
-  private $url;
-
-  public $status;
-  public $error;
-  public $raw_response;
-  public $response;
-
-  private $id = 0;
 
   /**
    * Initialize an instance of daemon
