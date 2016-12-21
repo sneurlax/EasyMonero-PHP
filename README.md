@@ -19,7 +19,7 @@ Getting Started
     Optionally, you can specify a host and port. Defaults are 127.0.0.1 and port 18081.
 
     ```php
-    $monero = new Monero('localhost','18081');
+    $monero = new Monero('12.34.56.78','9999');
     ```
 
 3. Make calls to monerod as methods for your object. Examples:

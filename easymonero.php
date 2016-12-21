@@ -184,9 +184,9 @@ class jsonRPCClient {
         $is_param_arr = false;
     }
 
-    if (!is_scalar($method)) { throw new Exception('Method name has no scalar value'); }              
-    if (is_array($params)) { $params = array_values($params);}else{throw new Exception('Params must be given as array');}
-    if ($this->notification) {$currentId = NULL; } else { $currentId = $this->id; }
+    if(!is_scalar($method)) { throw new Exception('Method name has no scalar value'); }              
+    if(is_array($params)) { $params = array_values($params);}else{throw new Exception('Params must be given as array'); }
+    if($this->notification) { $currentId = NULL; } else { $currentId = $this->id; }
     if($is_param_arr) {
       $request = array( 'method' => $method, 'params' => $params, 'id' => $currentId );
       $request = json_encode($request);
@@ -205,10 +205,10 @@ class jsonRPCClient {
     $response = json_decode(curl_exec($ch),true);
     curl_close($ch);
       
-    if ($this->debug) { echo nl2br($debug); }
-    if (!$this->notification) {
-      if ($response['id'] != $currentId) { return $response; }
-      if (isset($response['error']) AND !is_null($response['error'])) { return $response; } 
+    if($this->debug) { echo nl2br($debug); }
+    if(!$this->notification) {
+      if($response['id'] != $currentId) { return $response; }
+      if(isset($response['error']) AND !is_null($response['error'])) { return $response; } 
       return $response['result'];
     } else {
       return true;
