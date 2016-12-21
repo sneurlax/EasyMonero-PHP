@@ -1,7 +1,7 @@
 EasyMonero-PHP
 ===============
 
-A simple class for making calls to Monero's daemon API using PHP.
+A simple class for making calls to Monero's daemon JSON-RPC API using PHP.
 
 Getting Started
 ---------------
@@ -16,10 +16,10 @@ Getting Started
     $monero = new Monero();
     ```
 
-    Optionally, you can specify a host and port. Defaults are 127.0.0.1 and port 8332.
+    Optionally, you can specify a host and port. Defaults are 127.0.0.1 and port 18081.
 
     ```php
-    $monero = new Monero('localhost','8332');
+    $monero = new Monero('localhost','18081');
     ```
 
 3. Make calls to monerod as methods for your object. Examples:
@@ -29,5 +29,5 @@ Getting Started
     
     $monero->getblockcount();
     
-    $monero->get_block_header_by_height(2);
+    $monero->get_block_header_by_height(1);
     ```
